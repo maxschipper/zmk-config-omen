@@ -1,4 +1,4 @@
-# Copyright (c) 2020 Ryan Cross
+# Copyright (c) 2024 The ZMK Contributors
 # SPDX-License-Identifier: MIT
 
 config SHIELD_OMEN_LEFT
