@@ -1,16 +1,14 @@
 file_format: "1"
 id: omen
-name: Omen
+name: Split Omen
 type: shield
 url: https://github.com/maxschipper/zmk-config-omen
 requires: [pro_micro]
-# exposes: [i2c_oled]
+exposes: [i2c_oled]
 features:
   - keys
   - display
-  - studio
-  # - encoder
-  # - underglow
+  # - studio
 siblings:
   - omen_left
   - omen_right
