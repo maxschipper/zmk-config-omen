@@ -28,6 +28,6 @@
     pinctrl-names = "default", "sleep";
 
         /* SPI */
-        reg = <0>; /* ignored, but necessary for SPI bindings */
+        // reg = <0>; /* ignored, but necessary for SPI bindings */
         spi-max-frequency = <4000000>;
 };
