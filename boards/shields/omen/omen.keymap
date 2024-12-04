@@ -37,10 +37,10 @@
 // |  TAB  |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
 // | SHIFT |  Z  |  X  |  C   |  V   |  B   |  MUTE  |  | MUTE  |  N   |  M    |  ,    |  .   |   /   | SHIFT |
             bindings = <
-&kp F1    &kp F2 &kp W    &kp E    &kp R        &kp T                         &kp Z    &kp U     &kp I  &kp F7  &kp F8   &BSPC
-&kp ESC   &kp Q  &kp S    &kp D    &kp F        &kp G                         &kp H    &kp J     &kp K  &kp O   &kp P    &kp RETURN
-&kp TAB   &kp A  &kp X    &kp C    &kp V        &kp B                         &kp N    &kp M     &kp L  &kp COMMA   &kp SEMI &kp SQT
-&kp LSHFT &kp Y  &kp F3   &kp F4   &kp CONTROL  &kp ALT  &kp GUI     &kp GUI  &kp ALT  &kp CTRL  &kp F5 &kp F6  &kp FSLH &kp RSHFT
+&kp F1    &kp F2 &kp W    &kp E    &kp R      &kp T                          &kp Z     &kp U      &kp I  &kp F7      &kp F8   &BSPC
+&kp ESC   &kp Q  &kp S    &kp D    &kp F      &kp G                          &kp H     &kp J      &kp K  &kp O       &kp P    &kp RETURN
+&kp TAB   &kp A  &kp X    &kp C    &kp V      &kp B                          &kp N     &kp M      &kp L  &kp COMMA   &kp SEMI &kp SQT
+&kp LSHFT &kp Y  &kp F3   &kp F4   &kp LCTRL  &kp LALT  &kp GUI     &kp GUI  &kp RALT  &kp RCTRL  &kp F5 &kp F6      &kp FSLH &kp RSHFT
             >;
         };
 
