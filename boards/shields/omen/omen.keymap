@@ -9,11 +9,13 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/ext_power.h>
+#include <dt-bindings/zmk/outputs.h>
 
 #define BASE 0
 #define LOWER 1
 #define RAISE 2
 #define ADJUST 3
+#define BT 4
 
 / {
 
@@ -40,7 +42,7 @@
 &kp F1    &kp F2 &kp W    &kp E    &kp R      &kp T                           &kp Z      &kp U      &kp I  &kp F7      &kp F8   &kp BSPC
 &kp ESC   &kp Q  &kp S    &kp D    &kp F      &kp G                           &kp H      &kp J      &kp K  &kp O       &kp P    &kp RET
 &kp TAB   &kp A  &kp X    &kp C    &kp V      &kp B                           &kp N      &kp M      &kp L  &kp COMMA   &kp SEMI &kp SQT
-&kp LSHFT &kp Y  &kp F3   &kp F4   &kp LCTRL  &kp LALT  &kp LGUI     &kp RGUI  &kp RALT  &kp RCTRL  &kp F5 &kp F6      &kp FSLH &kp RSHFT
+&kp LSHFT &kp Y  &kp F3   &kp F4   &kp LCTRL  &kp LALT  &mo LOWER     &kp RGUI  &kp RALT  &kp RCTRL  &kp F5 &kp F6      &kp FSLH &kp RSHFT
             >;
         };
 		
@@ -74,6 +76,20 @@
 &kp LSHFT &kp Y  &kp F3   &kp F4   &kp LCTRL  &kp LALT  &kp LGUI     &kp RGUI  &kp RALT  &kp RCTRL  &kp F5 &kp F6      &kp FSLH &kp RSHFT
             >;
         };
+		
+        bt_layer {
+            display-name = "bt";
+            bindings = <
+&bt BT_SEL 0    &bt BT_SEL 1  &none    &none                 &sys_reset      &out OUT_TOG                     &none  &none  &none  &none  &none  &none
+&none           &none          &none    &ext_power EP_TOG    &none           &none                            &none  &none  &none  &none  &none  &none
+&none           &none          &none    &bt BT_CLR_ALL       &none           &bootloader                      &none  &none  &none  &none  &none  &none
+&none           &none          &none    &none                &none           &none         &none       &none  &none  &none  &none  &none  &none  &none
+            >;
+        };
 
     };
 };
+// &none    &none  &none    &none    &none      &none                   &none  &none  &none  &none  &none  &none
+// &none    &none  &none    &none    &none      &none                   &none  &none  &none  &none  &none  &none
+// &none    &none  &none    &none    &none      &none                   &none  &none  &none  &none  &none  &none
+// &none    &none  &none    &none    &none      &none  &none     &none  &none  &none  &none  &none  &none  &none
