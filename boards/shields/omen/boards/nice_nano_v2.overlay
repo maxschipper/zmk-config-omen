@@ -6,9 +6,10 @@
 
 /*
  * nice-view pins to use:
- * MOSI:      P0.29
- * SCK :      P0.31
- * CA  : D19 (P0.02)
+ *
+ * MOSI:  P0.29
+ * SCK :  P0.31
+ * CA  :  P0.02  (D19) 
  */
 
 
