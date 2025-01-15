@@ -17,9 +17,15 @@
 #     cmake-args: -DCONFIG_ZMK_STUDIO=y
 #     artifact-name: corne_left_with_studio
 #
+# ---
+# include:
+#   - board: nice_nano_v2
+#     shield: omen_left nice_view
+#   - board: nice_nano_v2
+#     shield: omen_right nice_view
 ---
 include:
   - board: nice_nano_v2
-    shield: omen_left nice_view
+    shield: omen_left
   - board: nice_nano_v2
-    shield: omen_right nice_view
+    shield: omen_right
