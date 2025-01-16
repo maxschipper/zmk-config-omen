@@ -80,7 +80,7 @@
         bt_layer {
             display-name = "bt";
             bindings = <
-&bt BT_SEL 0  &bt BT_SEL 1 &none    &none            &sys_reset      &out OUT_TOG                 &none  &none  &none  &none  &sys_reset  &bootloader
+&bt BTtSEL 0  &bt BT_SEL 1 &none    &none         &sys_reset      &out OUT_TOG                 &none  &none  &none  &none  &sys_reset  &bootloader
 &none         &none        &none    &ext_power EP_TOG    &none           &none                            &none  &none  &none  &none  &none  &none
 &none         &none        &none    &bt BT_CLR_ALL       &none           &bootloader                      &none  &none  &none  &none  &none  &none
 &none         &none        &none    &none                &none           &none         &none       &none  &none  &none  &none  &none  &none  &none
