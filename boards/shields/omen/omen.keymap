@@ -39,10 +39,23 @@
 // |  TAB  |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
 // | SHIFT |  Z  |  X  |  C   |  V   |  B   |  MUTE  |  | MUTE  |  N   |  M    |  ,    |  .   |   /   | SHIFT |
             bindings = <
-&kp F1     &kp F2 &kp W    &kp E    &kp R      &kp T                           &kp Y      &kp U      &kp I      &kp O       &kp F7    &kp F8
-&kp TAB    &kp Q  &kp S    &kp D    &kp F      &kp G                           &kp H      &kp J      &kp K      &kp L       &kp P     &kp BSPC
-&kp LSHIFT &kp A  &kp X    &kp C    &kp V      &kp B                           &kp N      &kp M      &kp COMMA  &kp PERIOD  &kp SEMI  &kp RET
-&kp ESC    &kp Z  &mo BT   &kp F4   &kp LALT   &kp RET  &kp LGUI     &kp RGUI  &kp SPACE  &kp RALT   &kp F5     &mo BT      &kp FSLH  &kp RSHFT
+// &kp F1     &kp F2 &kp W    &kp E    &kp R      &kp T                           &kp Y      &kp U      &kp I      &kp O       &kp F7    &kp F8
+// &kp TAB    &kp Q  &kp S    &kp D    &kp F      &kp G                           &kp H      &kp J      &kp K      &kp L       &kp P     &kp BSPC
+// &kp LSHIFT &kp A  &kp X    &kp C    &kp V      &kp B                           &kp N      &kp M      &kp COMMA  &kp PERIOD  &kp SEMI  &kp RET
+// &kp ESC    &kp Z  &mo BT   &kp F4   &kp LALT   &kp RET  &kp LGUI     &kp RGUI  &kp SPACE  &kp RALT   &kp F5     &mo BT      &kp FSLH  &kp RSHFT
+
+   &kp F1     &kp F2                                                                                                        &kp F7   &kp F8  
+
+   &kp TAB    &kp Q   &kp W   &kp E   &kp R    &kp T                                &kp Y     &kp U    &kp I     &kp O      &kp P    &kp BSPC  
+   &kp        &kp A   &kp S   &kp D   &kp F    &kp G                                &kp H     &kp J    &kp K     &kp L      &kp SEMI &kp none  
+   &kp        &kp Z   &kp X   &kp C   &kp V    &kp B                                &kp N     &kp M    &kp COMMA &kp PERIOD &kp FSLH &kp RSHIFT  
+
+                      &mo BT  &kp F4  &kp LALT &kp RET &kp LGUI           &kp RGUI  &kp SPACE &kp RALT &kp F5    &mo BT   
+
+
+
+
+
             >;
         };
 		
