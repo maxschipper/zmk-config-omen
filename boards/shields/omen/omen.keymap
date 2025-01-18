@@ -44,7 +44,7 @@
    &kp F1     &kp F2                                                                                                        &kp F7   &kp F8  
 
    &kp TAB        &kp Q    &kp W   &kp E   &kp R    &kp T                            &kp DE_Z  &kp U    &kp I     &kp O      &kp P    &kp BSPC  
-   &mt LSHIFT ESC &kp A    &kp S   &kp D   &kp F    &kp G                            &kp H     &kp J    &kp K     &kp L      &kp SEMI &none  
+   &mt LSHIFT ESC &kp A    &kp S   &kp D   &kp F    &kp G                            &kp H     &kp J    &kp K     &kp L      &kp SEMI &kp DE_FSLH  
    &none          &kp DE_Y &kp X   &kp C   &kp V    &kp B                            &kp N     &kp M    &kp COMMA &kp PERIOD &kp FSLH &kp RSHIFT  
 
                  &mo BT  &kp F4       &kp LALT &lt 1 RET &kp LGUI          &kp RGUI  &lt 2 SPACE &kp RALT      &kp F5  &mo BT   
