@@ -11,6 +11,8 @@
 #include <dt-bindings/zmk/ext_power.h>
 #include <dt-bindings/zmk/outputs.h>
 
+#include <keys_de.h>
+
 #define BASE 0
 #define LOWER 1
 #define RAISE 2
@@ -39,23 +41,13 @@
 // |  TAB  |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
 // | SHIFT |  Z  |  X  |  C   |  V   |  B   |  MUTE  |  | MUTE  |  N   |  M    |  ,    |  .   |   /   | SHIFT |
             bindings = <
-// &kp F1     &kp F2 &kp W    &kp E    &kp R      &kp T                           &kp Y      &kp U      &kp I      &kp O       &kp F7    &kp F8
-// &kp TAB    &kp Q  &kp S    &kp D    &kp F      &kp G                           &kp H      &kp J      &kp K      &kp L       &kp P     &kp BSPC
-// &kp LSHIFT &kp A  &kp X    &kp C    &kp V      &kp B                           &kp N      &kp M      &kp COMMA  &kp PERIOD  &kp SEMI  &kp RET
-// &kp ESC    &kp Z  &mo BT   &kp F4   &kp LALT   &kp RET  &kp LGUI     &kp RGUI  &kp SPACE  &kp RALT   &kp F5     &mo BT      &kp FSLH  &kp RSHFT
-
    &kp F1     &kp F2                                                                                                        &kp F7   &kp F8  
 
-   &kp TAB    &kp Q   &kp W   &kp E   &kp R    &kp T                                &kp Y     &kp U    &kp I     &kp O      &kp P    &kp BSPC  
-   &kp        &kp A   &kp S   &kp D   &kp F    &kp G                                &kp H     &kp J    &kp K     &kp L      &kp SEMI &kp none  
-   &kp        &kp Z   &kp X   &kp C   &kp V    &kp B                                &kp N     &kp M    &kp COMMA &kp PERIOD &kp FSLH &kp RSHIFT  
+   &kp TAB        &kp Q    &kp W   &kp E   &kp R    &kp T                            &kp DE_Z  &kp U    &kp I     &kp O      &kp P    &kp BSPC  
+   &mt LSHIFT ESC &kp A    &kp S   &kp D   &kp F    &kp G                            &kp H     &kp J    &kp K     &kp L      &kp SEMI &none  
+   &none          &kp DE_Y &kp X   &kp C   &kp V    &kp B                            &kp N     &kp M    &kp COMMA &kp PERIOD &kp FSLH &kp RSHIFT  
 
-                      &mo BT  &kp F4  &kp LALT &kp RET &kp LGUI           &kp RGUI  &kp SPACE &kp RALT &kp F5    &mo BT   
-
-
-
-
-
+                 &mo BT  &kp F4       &kp LALT &lt 1 RET &kp LGUI          &kp RGUI  &lt 2 SPACE &kp RALT      &kp F5  &mo BT   
             >;
         };
 		
@@ -63,40 +55,68 @@
         lower_layer {
             display-name = "lower";
             bindings = <
-&kp F1    &kp F2 &kp W    &kp E    &kp R      &kp T                           &kp Z      &kp U      &kp I      &kp O        &kp F7    &kp F8
-&kp ESC   &kp Q  &kp S    &kp D    &kp F      &kp G                           &kp H      &kp J      &kp K      &kp L        &kp P     &kp BSPC
-&kp TAB   &kp A  &kp X    &kp C    &kp V      &kp B                           &kp N      &kp M      &kp COMMA  &kp PERIOD   &kp SEMI  &kp RET
-&kp LSHFT &kp Y  &kp F3   &kp F4   &kp LCTRL  &kp RET  &kp LGUI     &kp RGUI  &kp SPACE  &kp RCTRL  &kp F5     &kp F6       &kp FSLH  &kp RSHFT
+// &kp F1    &kp F2 &kp W    &kp E    &kp R      &kp T                           &kp Z      &kp U      &kp I      &kp O        &kp F7    &kp F8
+// &kp ESC   &kp Q  &kp S    &kp D    &kp F      &kp G                           &kp H      &kp J      &kp K      &kp L        &kp P     &kp BSPC
+// &kp TAB   &kp A  &kp X    &kp C    &kp V      &kp B                           &kp N      &kp M      &kp COMMA  &kp PERIOD   &kp SEMI  &kp RET
+// &kp LSHFT &kp Y  &kp F3   &kp F4   &kp LCTRL  &kp RET  &kp LGUI     &kp RGUI  &kp SPACE  &kp RCTRL  &kp F5     &kp F6       &kp FSLH  &kp RSHFT
+   &kp F1     &kp F2                                                                                                        &kp F7   &kp F8  
+
+   &kp TAB    &kp Q   &kp W   &kp E   &kp R    &kp T                                &kp N7     &kp N8    &kp N9     &kp O      &kp P    &kp BSPC  
+   &none      &kp A   &kp S   &kp D   &kp F    &kp G                                &kp N4     &kp N5    &kp N6     &kp PLUS      &kp SEMI &none  
+   &none      &kp Z   &kp X   &kp C   &kp V    &kp B                                &kp N1     &kp N2    &kp N3     &kp PERIOD &kp FSLH &kp RSHIFT  
+
+                      &mo BT  &kp F4  &kp LALT &kp RET &kp LGUI           &kp RGUI  &kp SPACE &kp N0     &kp F5    &mo BT   
             >;
         };
 
         raise_layer {
             display-name = "raise";
             bindings = <
-&kp F1    &kp F2 &kp W    &kp E    &kp R      &kp T                           &kp Z      &kp U      &kp I  &kp F7      &kp F8   &kp BSPC
-&kp ESC   &kp Q  &kp S    &kp D    &kp F      &kp G                           &kp H      &kp J      &kp K  &kp O       &kp P    &kp RET
-&kp TAB   &kp A  &kp X    &kp C    &kp V      &kp B                           &kp N      &kp M      &kp L  &kp COMMA   &kp SEMI &kp SQT
-&kp LSHFT &kp Y  &kp F3   &kp F4   &kp LCTRL  &kp LALT  &kp LGUI     &kp RGUI  &kp RALT  &kp RCTRL  &kp F5 &kp F6      &kp FSLH &kp RSHFT
+// &kp F1    &kp F2 &kp W    &kp E    &kp R      &kp T                           &kp Z      &kp U      &kp I  &kp F7      &kp F8   &kp BSPC
+// &kp ESC   &kp Q  &kp S    &kp D    &kp F      &kp G                           &kp H      &kp J      &kp K  &kp O       &kp P    &kp RET
+// &kp TAB   &kp A  &kp X    &kp C    &kp V      &kp B                           &kp N      &kp M      &kp L  &kp COMMA   &kp SEMI &kp SQT
+// &kp LSHFT &kp Y  &kp F3   &kp F4   &kp LCTRL  &kp LALT  &kp LGUI     &kp RGUI  &kp RALT  &kp RCTRL  &kp F5 &kp F6      &kp FSLH &kp RSHFT
+   &kp F1     &kp F2                                                                                                        &kp F7   &kp F8  
+
+   &kp TAB    &kp Q   &kp W   &kp E   &kp R    &kp T                                &kp Y     &kp U    &kp I     &kp O      &kp P    &kp BSPC  
+   &none      &kp A   &kp S   &kp D   &kp F    &kp G                                &kp H     &kp J    &kp K     &kp L      &kp SEMI &none  
+   &none      &kp Z   &kp X   &kp C   &kp V    &kp B                                &kp N     &kp M    &kp COMMA &kp PERIOD &kp FSLH &kp RSHIFT  
+
+                      &mo BT  &kp F4  &kp LALT &kp RET &kp LGUI           &kp RGUI  &kp SPACE &kp RALT &kp F5    &mo BT   
             >;
         };
 
         adjust_layer {
             display-name = "adjust";
             bindings = <
-&kp F1    &kp F2 &kp W    &kp E    &kp R      &kp T                           &kp Z      &kp U      &kp I  &kp F7      &kp F8   &kp BSPC
-&kp ESC   &kp Q  &kp S    &kp D    &kp F      &kp G                           &kp H      &kp J      &kp K  &kp O       &kp P    &kp RET
-&kp TAB   &kp A  &kp X    &kp C    &kp V      &kp B                           &kp N      &kp M      &kp L  &kp COMMA   &kp SEMI &kp SQT
-&kp LSHFT &kp Y  &kp F3   &kp F4   &kp LCTRL  &kp LALT  &kp LGUI     &kp RGUI  &kp RALT  &kp RCTRL  &kp F5 &kp F6      &kp FSLH &kp RSHFT
+// &kp F1    &kp F2 &kp W    &kp E    &kp R      &kp T                           &kp Z      &kp U      &kp I  &kp F7      &kp F8   &kp BSPC
+// &kp ESC   &kp Q  &kp S    &kp D    &kp F      &kp G                           &kp H      &kp J      &kp K  &kp O       &kp P    &kp RET
+// &kp TAB   &kp A  &kp X    &kp C    &kp V      &kp B                           &kp N      &kp M      &kp L  &kp COMMA   &kp SEMI &kp SQT
+// &kp LSHFT &kp Y  &kp F3   &kp F4   &kp LCTRL  &kp LALT  &kp LGUI     &kp RGUI  &kp RALT  &kp RCTRL  &kp F5 &kp F6      &kp FSLH &kp RSHFT
+   &kp F1     &kp F2                                                                                                        &kp F7   &kp F8  
+
+   &kp TAB    &kp Q   &kp W   &kp E   &kp R    &kp T                                &kp Y     &kp U    &kp I     &kp O      &kp P    &kp BSPC  
+   &none      &kp A   &kp S   &kp D   &kp F    &kp G                                &kp H     &kp J    &kp K     &kp L      &kp SEMI &none  
+   &none      &kp Z   &kp X   &kp C   &kp V    &kp B                                &kp N     &kp M    &kp COMMA &kp PERIOD &kp FSLH &kp RSHIFT  
+
+                      &mo BT  &kp F4  &kp LALT &kp RET &kp LGUI           &kp RGUI  &kp SPACE &kp RALT &kp F5    &mo BT   
             >;
         };
 		
         bt_layer {
             display-name = "bt";
             bindings = <
-&bt BT_SEL 0  &bt BT_SEL 1 &none    &none         &sys_reset      &out OUT_TOG                 &none  &none  &none  &none  &sys_reset  &bootloader
-&none         &none        &none    &ext_power EP_TOG    &none           &none                            &none  &none  &none  &none  &none  &none
-&none         &none        &none    &bt BT_CLR_ALL       &none           &bootloader                      &none  &none  &none  &none  &none  &none
-&none         &none        &none    &none                &none           &none         &none       &none  &none  &none  &none  &none  &none  &none
+// &bt BT_SEL 0  &bt BT_SEL 1 &none    &none         &sys_reset      &out OUT_TOG                 &none  &none  &none  &none  &sys_reset  &bootloader
+// &none         &none        &none    &ext_power EP_TOG    &none           &none                            &none  &none  &none  &none  &none  &none
+// &none         &none        &none    &bt BT_CLR_ALL       &none           &bootloader                      &none  &none  &none  &none  &none  &none
+// &none         &none        &none    &none                &none           &none         &none       &none  &none  &none  &none  &none  &none  &none
+   &bt BT_SEL 0     &bt BT_SEL 1                                                                                     &sys_reset   &bootloader  
+
+   &kp TAB    &kp Q   &kp W   &kp E          &sys_reset &out OUT_TOG             &kp Y     &kp U    &kp I     &kp O      &kp P    &kp BSPC  
+   &none      &kp A   &kp S   &kp D          &kp F      &kp G                    &kp H     &kp J    &kp K     &kp L      &kp SEMI &none  
+   &none      &kp Z   &kp X   &bt BT_CLR_ALL &kp V      &bootloader              &kp N     &kp M    &kp COMMA &kp PERIOD &kp FSLH &kp RSHIFT  
+
+                  &mo BT  &kp F4       &kp LALT &kp RET &kp LGUI                &kp RGUI  &kp SPACE &kp RALT       &kp F5    &mo BT   
             >;
         };
 
@@ -106,3 +126,12 @@
 // &none    &none  &none    &none    &none      &none                   &none  &none  &none  &none  &none  &none
 // &none    &none  &none    &none    &none      &none                   &none  &none  &none  &none  &none  &none
 // &none    &none  &none    &none    &none      &none  &none     &none  &none  &none  &none  &none  &none  &none
+//
+   //  &kp F1     &kp F2                                                                                                        &kp F7   &kp F8  
+
+   // &kp TAB    &kp Q   &kp W   &kp E   &kp R    &kp T                                &kp Y     &kp U    &kp I     &kp O      &kp P    &kp BSPC  
+   // &kp LSHIFT &kp A   &kp S   &kp D   &kp F    &kp G                                &kp H     &kp J    &kp K     &kp L      &kp SEMI &none  
+   // &none      &kp Z   &kp X   &kp C   &kp V    &kp B                                &kp N     &kp M    &kp COMMA &kp PERIOD &kp FSLH &kp RSHIFT  
+
+   //                    &mo BT  &kp F4  &kp LALT &kp RET &kp LGUI           &kp RGUI  &kp SPACE &kp RALT &kp F5    &mo BT   
+
