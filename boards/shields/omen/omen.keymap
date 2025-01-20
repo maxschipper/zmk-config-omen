@@ -20,6 +20,24 @@
 #define BT 4
 
 / {
+	behaviors {
+        qht: quick_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <400>;
+            quick-tap-ms = <200>;
+            bindings = <&kp>, <&kp>;
+        };
+        qlt: quick_layer_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "balanced";
+            tapping-term-ms = <300>;
+            quick-tap-ms = <200>;
+            bindings = <&mo>, <&kp>;
+        };
+    };
 
    // Activate ADJUST layer by pressing raise and lower
     conditional_layers {
@@ -47,7 +65,7 @@
    &mt LSHIFT ESC &kp A    &kp S   &kp D   &kp F    &kp G                       &kp H     &kp J    &kp K        &kp L      &kp RSHIFT   &kp DE_COLON  
    &none          &kp DE_Y &kp X   &kp C   &kp V    &kp B                       &kp N     &kp M    &kp DE_COMMA &kp DE_DOT &kp DE_MINUS &kp RSHIFT  
 //                                |                      -----------|-----------                            |
-                 &mo BT  &kp F4       &kp LALT &lt 1 RET &kp LGUI       &kp RGUI  &lt 2 SPACE &mt RALT BSPC     &kp F5  &mo BT   
+                 &mo BT  &kp F4       &kp LALT &lt 1 RET &kp LGUI       &kp RGUI  &qlt 2 SPACE &qht RALT BSPC     &kp F5  &mo BT   
 //                                |                                 |                                       |                     
             >;
         };
