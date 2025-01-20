@@ -98,9 +98,9 @@
 // &kp LSHFT &kp Y  &kp F3   &kp F4   &kp LCTRL  &kp LALT  &kp LGUI     &kp RGUI  &kp RALT  &kp RCTRL  &kp F5 &kp F6      &kp FSLH &kp RSHFT
    &kp F1     &kp F2                                                                                                        &kp F7   &kp F8  
 
-   &kp TAB    &kp DE_AT   &kp W    &kp DE_EURO &kp DE_DLLR  &kp DE_AMPS           &kp Y       &kp DE_AMPS &kp DE_TILDE &kp DE_MIDDOT &kp DE_PRCNT &none
-   &kp LSHIFT &kp A       &kp S      &kp D       &kp DE_EXCL  &kp G                 &kp DE_HASH &kp DE_SQT  &kp DE_EQUAL &kp DE_BULLET &kp SEMI &kp DE_GRAVE  
-   &none      &kp Z       &kp X      &kp C       &kp DE_QMARK &kp B                 &kp DE_STAR &kp DE_DQT  &kp COMMA    &kp PERIOD    &kp FSLH &kp RSHIFT  
+   &kp TAB    &kp DE_AT   &kp W      &kp DE_EURO &kp DE_DLLR  &kp DE_AMPS         &kp Y       &kp DE_AMPS &kp DE_TILDE &kp DE_MIDDOT &kp DE_PRCNT &none
+   &kp LSHIFT &kp A       &kp S      &kp D       &kp DE_EXCL  &kp G               &kp DE_HASH &kp DE_SQT  &kp DE_EQUAL &kp DE_BULLET &kp SEMI     &kp DE_GRAVE  
+   &none      &kp Z       &kp X      &kp C       &kp DE_QMARK &kp B               &kp DE_STAR &kp DE_DQT  &kp COMMA    &kp PERIOD    &kp FSLH     &kp RSHIFT  
 
              &mo BT  &kp F4  &kp LALT &kp RET &kp LGUI                             &kp RGUI  &kp SPACE &kp RALT &kp F5    &mo BT   
             >;
