@@ -55,18 +55,20 @@
             display-name = "default";
 // ------------------------------------------------------------------------------------------------------------
                                                                                                                
-// |  ESC  |  Q  |  W  |  E   |  R   |  T   |                   |  Y   |  U    |  I    |  O   |   P   | BKSPC |
-// |  TAB  |  A  |  S  |  D   |  F   |  G   |                   |  H   |  J    |  K    |  L   |   ;   |   '   |
-// | SHIFT |  Z  |  X  |  C   |  V   |  B   |  MUTE  |  | MUTE  |  N   |  M    |  ,    |  .   |   /   | SHIFT |
+// |  F1   |  F2 |                                                                   |  F7 |  F8  |
+// |  ESC  |  Q  |  W  |  E  |  R  |  T  |                   |  Y  |  U  |  I  |  O  |  P  |  F9  |
+// |  TAB  |  A  |  S  |  D  |  F  |  G  |                   |  H  |  J  |  K  |  L  |  ;  |  F10 |
+// | SHIFT |  Z  |  X  |  C  |  V  |  B  |                   |  N  |  M  |  ,  |  .  |  -  |  F11 |
+//         |  F3 |  F4 |     | OPT | RET | CMD |       | CMD |SPACE| OPT |     |  F5 |  F6 |       
             bindings = <
    &kp F1     &kp F2                                                                                                       &kp DE_SZ  &kp DE_QMARK  
 //                                                       ___________|___________       
    &kp TAB        &kp Q    &kp W   &kp E   &kp R    &kp T                       &kp DE_Z  &kp U    &kp I        &kp O      &kp P        &kp DE_UMLAUT 
    &mt LSHIFT ESC &kp A    &kp S   &kp D   &kp F    &kp G                       &kp H     &kp J    &kp K        &kp L      &kp RSHIFT   &kp DE_COLON  
-   &none          &kp DE_Y &kp X   &kp C   &kp V    &kp B                       &kp N     &kp M    &kp DE_COMMA &kp DE_DOT &kp DE_MINUS &kp RSHIFT  
-//                                |                      -----------|-----------                            |
+   &kp LCTRL      &kp DE_Y &kp X   &kp C   &kp V    &kp B                       &kp N     &kp M    &kp DE_COMMA &kp DE_DOT &kp DE_MINUS &kp RSHIFT  
+//                                |                      -----------|-----------                              |
                  &mo BT  &kp F4       &kp LALT &lt 1 RET &kp LGUI       &kp RGUI  &qlt 2 SPACE &qht RALT BSPC     &kp F5  &mo BT   
-//                                |                                 |                                       |                     
+//                                |                                 |                                         |                     
             >;
         };
 		
@@ -99,8 +101,8 @@
    &kp F1     &kp F2                                                                                                        &kp F7   &kp F8  
 
    &kp TAB    &kp DE_AT   &kp W      &kp DE_EURO &kp DE_DLLR  &kp DE_AMPS         &kp Y       &kp DE_AMPS &kp DE_TILDE &kp DE_MIDDOT &kp DE_PRCNT &none
-   &kp LSHIFT &kp A       &kp S      &kp D       &kp DE_EXCL  &kp G               &kp DE_HASH &kp DE_SQT  &kp DE_EQUAL &kp DE_BULLET &kp SEMI     &kp DE_GRAVE  
-   &none      &kp Z       &kp X      &kp C       &kp DE_QMARK &kp B               &kp DE_STAR &kp DE_DQT  &kp COMMA    &kp PERIOD    &kp FSLH     &kp RSHIFT  
+   &kp LSHIFT &kp A       &kp S      &kp D       &kp DE_EXCL  &kp G               &kp DE_HASH &kp DE_SQT  &kp DE_EQUAL &kp DE_BULLET &none     &kp DE_GRAVE  
+   &none      &kp Z       &kp X      &kp C       &kp DE_QMARK &kp B               &kp DE_STAR &kp DE_DQT  &none        &none         &none     &kp RSHIFT  
 
              &mo BT  &kp F4  &kp LALT &kp RET &kp LGUI                             &kp RGUI  &kp SPACE &kp RALT &kp F5    &mo BT   
             >;
