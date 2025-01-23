@@ -1,11 +1,11 @@
 manifest:
   remotes:
-    - name: petejohanson
-      url-base: https://github.com/petejohanson
+    - name: maxschipper
+      url-base: https://github.com/maxschipper
   projects:
     - name: zmk
-      remote: petejohanson
-      revision: core/zephyr-v3.0.0-update
+      remote: maxschipper
+      revision: main
       import: app/west.yml
   self:
     path: config
