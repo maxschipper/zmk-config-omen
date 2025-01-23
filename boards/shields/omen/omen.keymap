@@ -18,6 +18,7 @@
 #define RAISE 2
 #define ADJUST 3
 #define BT 4
+#define NAV 5
 
 / {
 	behaviors {
@@ -80,13 +81,13 @@
 // &kp ESC   &kp Q  &kp S    &kp D    &kp F      &kp G                           &kp H      &kp J      &kp K      &kp L        &kp P     &kp BSPC
 // &kp TAB   &kp A  &kp X    &kp C    &kp V      &kp B                           &kp N      &kp M      &kp COMMA  &kp PERIOD   &kp SEMI  &kp RET
 // &kp LSHFT &kp Y  &kp F3   &kp F4   &kp LCTRL  &kp RET  &kp LGUI     &kp RGUI  &kp SPACE  &kp RCTRL  &kp F5     &kp F6       &kp FSLH  &kp RSHFT
-   &kp F1     &kp F2                                                                                                              &none   &none  
+   &none      &none                                                                                                              &none   &none  
 
-   &kp TAB    &kp DE_CARET &kp W       &kp E       &kp R       &kp DE_PIPE        &kp DE_N7 &kp DE_N8 &kp DE_N9 &kp DE_STAR  &kp BSPC    &kp BSPC  
-   &kp LSHIFT &kp DE_LT    &kp DE_LBKT &kp DE_LBRC &kp DE_LPAR &kp DE_FSLH        &kp DE_N4 &kp DE_N5 &kp DE_N6 &kp DE_MINUS &kp DE_HASH &kp RET 
-   &none      &kp DE_GT    &kp DE_RBKT &kp DE_RBRC &kp DE_RPAR &kp DE_BSLH        &kp DE_N1 &kp DE_N2 &kp DE_N3 &kp DE_PLUS  &kp RSHIFT  &kp RSHIFT  
+   &kp TAB    &kp DE_CARET &kp W       &kp E       &kp R       &kp DE_PIPE        &kp DE_PLUS  &kp DE_N7 &kp DE_N8 &kp DE_N9 &kp BSPC    &kp BSPC  
+   &kp LSHIFT &kp DE_LT    &kp DE_LBKT &kp DE_LBRC &kp DE_LPAR &kp DE_FSLH        &kp DE_EQUAL &kp DE_N4 &kp DE_N5 &kp DE_N6 &kp DE_STAR &kp RET 
+   &none      &kp DE_GT    &kp DE_RBKT &kp DE_RBRC &kp DE_RPAR &kp DE_BSLH        &kp DE_MINUS &kp DE_N1 &kp DE_N2 &kp DE_N3 &kp RSHIFT  &kp RSHIFT  
 
-                           &mo BT  &kp F4  &kp LALT &kp RET &kp LGUI        &kp RGUI  &kp SPACE &kp DE_N0     &kp DE_COMMA    &kp DE_EQUAL   
+                                 &mo BT  &kp F4  &kp LALT &kp RET &kp LGUI        &kp RGUI  &kp SPACE &kp DE_N0     &kp DE_COMMA    &kp DE_DOT   
 
             >;
         };
@@ -100,9 +101,9 @@
 // &kp LSHFT &kp Y  &kp F3   &kp F4   &kp LCTRL  &kp LALT  &kp LGUI     &kp RGUI  &kp RALT  &kp RCTRL  &kp F5 &kp F6      &kp FSLH &kp RSHFT
    &kp F1     &kp F2                                                                                                        &kp F7   &kp F8  
 
-   &kp TAB    &kp DE_AT   &kp W      &kp DE_EURO &kp DE_DLLR  &kp DE_AMPS         &kp Y       &kp DE_AMPS &kp DE_TILDE &kp DE_MIDDOT &kp DE_PRCNT &none
-   &kp LSHIFT &kp A       &kp S      &kp D       &kp DE_EXCL  &kp G               &kp DE_HASH &kp DE_SQT  &kp DE_EQUAL &kp DE_BULLET &none     &kp DE_GRAVE  
-   &none      &kp Z       &kp X      &kp C       &kp DE_QMARK &kp B               &kp DE_STAR &kp DE_DQT  &none        &none         &none     &kp RSHIFT  
+   &kp TAB    &kp DE_AT   &none      &kp DE_EURO &kp DE_DLLR  &kp DE_AMPS         &none       &kp DE_AMPS &kp DE_TILDE &kp DE_PRCNT &kp DE_PRCNT  &none
+   &kp LSHIFT &none       &none      &none       &kp DE_EXCL  &none               &kp DE_HASH &kp DE_DQT  &kp DE_EXCEL &none        &kp DE_BULLET &kp DE_GRAVE  
+   &none      &none       &none      &none       &kp DE_QMARK &none               &kp DE_STAR &kp DE_SQT  &kp DE_QMARK &none        &kp DE_MIDDOT &kp RSHIFT  
 
              &mo BT  &kp F4  &kp LALT &kp RET &kp LGUI                             &kp RGUI  &kp SPACE &kp RALT &kp F5    &mo BT   
             >;
@@ -139,6 +140,23 @@
    &none      &kp Z   &kp X   &bt BT_CLR_ALL &kp V      &bootloader              &kp N     &kp M    &kp COMMA &kp PERIOD &kp FSLH &kp RSHIFT  
 
                   &mo BT  &kp F4       &kp LALT &kp RET &kp LGUI                &kp RGUI  &kp SPACE &kp RALT       &kp F5    &mo BT   
+            >;
+        };
+
+        navigation_layer {
+            display-name = "nav";
+            bindings = <
+// &kp F1    &kp F2 &kp W    &kp E    &kp R      &kp T                           &kp Z      &kp U      &kp I  &kp F7      &kp F8   &kp BSPC
+// &kp ESC   &kp Q  &kp S    &kp D    &kp F      &kp G                           &kp H      &kp J      &kp K  &kp O       &kp P    &kp RET
+// &kp TAB   &kp A  &kp X    &kp C    &kp V      &kp B                           &kp N      &kp M      &kp L  &kp COMMA   &kp SEMI &kp SQT
+// &kp LSHFT &kp Y  &kp F3   &kp F4   &kp LCTRL  &kp LALT  &kp LGUI     &kp RGUI  &kp RALT  &kp RCTRL  &kp F5 &kp F6      &kp FSLH &kp RSHFT
+   &kp F1     &kp F2                                                                                                        &kp F7   &kp F8  
+
+   &kp TAB    &kp Q   &kp W   &kp E   &kp R    &kp T                                &kp Y     &kp U    &kp I     &kp O      &kp P    &kp BSPC  
+   &none      &kp A   &kp S   &kp D   &kp F    &kp G                                &kp H     &kp J    &kp K     &kp L      &kp SEMI &none  
+   &none      &kp Z   &kp X   &kp C   &kp V    &kp B                                &kp N     &kp M    &kp COMMA &kp PERIOD &kp FSLH &kp RSHIFT  
+
+                      &mo BT  &kp F4  &kp LALT &kp RET &kp LGUI           &kp RGUI  &kp SPACE &kp RALT &kp F5    &mo BT   
             >;
         };
 
