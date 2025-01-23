@@ -5,7 +5,7 @@ manifest:
   projects:
     - name: zmk
       remote: maxschipper
-      revision: main
+      revision: ae8299ed
       import: app/west.yml
   self:
     path: config
