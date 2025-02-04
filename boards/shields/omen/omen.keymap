@@ -65,7 +65,7 @@
    &kp F1     &kp F2                                                                                                       &kp DE_SZ  &kp DE_QMARK  
 //                                                       ___________|___________       
    &kp TAB        &kp Q    &kp W   &kp E   &kp R    &kp T                       &kp DE_Z  &kp U    &kp I        &kp O      &kp P        &kp DE_UMLAUT 
-   &mt LSHIFT ESC &kp A    &kp S   &kp D   &kp F    &kp G                       &kp H     &kp J    &kp K        &kp L      &kp RSHIFT   &kp DE_COLON  
+   &ht_tp LSHIFT ESC &kp A    &kp S   &kp D   &kp F    &kp G                       &kp H     &kp J    &kp K        &kp L      &kp RSHIFT   &kp DE_COLON  
    &kp LCTRL      &kp DE_Y &kp X   &kp C   &kp V    &kp B                       &kp N     &kp M    &kp DE_COMMA &kp DE_DOT &kp DE_MINUS &kp RSHIFT  
 //                                |                      -----------|-----------                              |
                  &mo BT  &kp F4       &kp LGUI &lt 1 RET &kp LALT       &kp RALT  &qlt 2 SPACE &qht RGUI BSPC     &kp F5  &mo BT   
