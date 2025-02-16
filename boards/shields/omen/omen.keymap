@@ -76,7 +76,8 @@
    &ht_tp LSHIFT ESC &kp A    &kp S   &kp D   &kp F    &kp G                       &kp H     &kp J    &kp K        &kp L      &kp RSHIFT   &kp DE_COLON  
    &kp LCTRL      &kp DE_Y &kp X   &kp C   &kp V    &kp B                       &kp N     &kp M    &kp DE_COMMA &kp DE_DOT &kp DE_MINUS &kp RSHIFT  
 //                                |                      -----------|-----------                              |
-                 &mo BT  &kp LC(LA(LGUI))       &kp LGUI &lt LOWER RET &kp LALT       &mo NAV  &qlt RAISE SPACE &qlt NAV BSPC  &kp RC(RA(RGUI)) &mo BT   
+                 &mo BT  &kp LC(LA(LGUI))       &mo LOWER &mt LGUI RET &kp LALT       &mo NAV  &qlt RAISE SPACE &qlt NAV BSPC  &kp RC(RA(RGUI)) &mo BT   
+                 // &mo BT  &kp LC(LA(LGUI))       &kp LGUI &lt LOWER RET &kp LALT       &mo NAV  &qlt RAISE SPACE &qlt NAV BSPC  &kp RC(RA(RGUI)) &mo BT   
 //                                |                                 |                                         |                     
             >;
         };
