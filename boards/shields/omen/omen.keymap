@@ -12,13 +12,17 @@
 #include <dt-bindings/zmk/outputs.h>
 
 #include "keys_de_osx.h"
+#include "keys_de_nix.h"
 
 #define BASE 0
-#define LOWER 1
-#define RAISE 2
-#define ADJUST 3
-#define BT 4
-#define NAV 5
+#define NIX 1
+#define LOWER 2
+#define RAISE 3
+#define ADJUST 4
+#define BT 5
+#define NAV 6
+#define LOWER_NIX 7
+#define RAISE_NIX 8
 
 / {
 	behaviors {
@@ -72,27 +76,33 @@
             bindings = <
    &kp F1     &kp F2                                                                                                       &kp DE_SZ  &kp DE_QMARK  
 //                                                       ___________|___________       
-   &kp TAB        &kp Q    &kp W   &kp E   &kp R    &kp T                       &kp DE_Z  &kp U    &kp I        &kp O      &kp P        &kp DE_UMLAUT 
+   &kp TAB           &kp Q    &kp W   &kp E   &kp R    &kp T                    &kp DE_Z  &kp U    &kp I        &kp O      &kp P        &kp DE_UMLAUT 
    &ht_tp LSHIFT ESC &kp A    &kp S   &kp D   &kp F    &kp G                    &kp H     &kp J    &kp K        &kp L      &kp RSHIFT   &kp DE_COLON  
-   &kp LCTRL      &kp DE_Y &kp X   &kp C   &kp V    &kp B                       &kp N     &kp M    &kp DE_COMMA &kp DE_DOT &kp DE_MINUS &caps_word  
+   &kp LCTRL         &kp DE_Y &kp X   &kp C   &kp V    &kp B                    &kp N     &kp M    &kp DE_COMMA &kp DE_DOT &kp DE_MINUS &caps_word  
 //                                |                      -----------|-----------                              |
-                 &mo BT  &kp LC(LA(LGUI))       &mo LOWER &mt LGUI RET &kp LALT       &mo NAV  &qlt RAISE SPACE &qlt NAV BSPC  &kp RC(RA(RGUI)) &mo BT   
-                 // &mo BT  &kp LC(LA(LGUI))       &kp LGUI &lt LOWER RET &kp LALT       &mo NAV  &qlt RAISE SPACE &qlt NAV BSPC  &kp RC(RA(RGUI)) &mo BT   
+                 &mo BT  &kp LC(LA(LGUI))       &mo LOWER &mt LGUI RET &kp LALT       &kp RCTRL  &qlt RAISE SPACE &qlt NAV BSPC  &kp RC(RA(RGUI)) &mo BT   
 //                                |                                 |                                         |                     
             >;
         };
-		
+
+        nix_layer {
+        // only define the keys that differ from the macos BASE layer above; also used to change the layers the momentary layer keys activate(from RAISE to RAISE_NIX)
+            display-name = "nix";
+            bindings = <
+   &trans     &trans                                                                                                 &trans  &trans  
+   &trans    &trans   &trans  &trans  &trans   &trans                               &trans  &trans   &trans  &trans  &trans  &none 
+   &trans    &trans   &trans  &trans  &trans   &trans                               &trans  &trans   &trans  &trans  &trans  &trans
+   &kp LGUI  &trans   &trans  &trans  &trans   &trans                               &trans  &trans   &trans  &trans  &trans  &trans  
+  &trans   &kp LC(LA(LGUI))       &mo LOWER_NIX &mt LCTRL RET &kp LALT       &kp RCTRL  &qlt RAISE_NIX SPACE &qlt NAV BSPC  &kp RC(RA(RGUI)) &trans    
+            >;
+        };
+
 
         lower_layer {
             display-name = "lower";
             bindings = <
-// &kp F1    &kp F2 &kp W    &kp E    &kp R      &kp T                           &kp Z      &kp U      &kp I      &kp O        &kp F7    &kp F8
-// &kp ESC   &kp Q  &kp S    &kp D    &kp F      &kp G                           &kp H      &kp J      &kp K      &kp L        &kp P     &kp BSPC
-// &kp TAB   &kp A  &kp X    &kp C    &kp V      &kp B                           &kp N      &kp M      &kp COMMA  &kp PERIOD   &kp SEMI  &kp RET
-// &kp LSHFT &kp Y  &kp F3   &kp F4   &kp LCTRL  &kp RET  &kp LGUI     &kp RGUI  &kp SPACE  &kp RCTRL  &kp F5     &kp F6       &kp FSLH  &kp RSHFT
    &none      &none                                                                                                              &none   &none  
-
-   &kp TAB    &kp DE_CARET &kp W       &kp E       &kp R       &kp DE_PIPE        &kp DE_PLUS  &kp DE_N7 &kp DE_N8 &kp DE_N9 &kp BSPC    &kp BSPC  
+   &kp TAB    &kp DE_CARET &kp W       &kp E       &kp R       &kp DE_PIPE        &kp DE_PLUS  &kp DE_N7 &kp DE_N8 &kp DE_N9 &kp BSPC    &kp DEL  
    &kp LSHIFT &kp DE_LT    &kp DE_LBKT &kp DE_LBRC &kp DE_LPAR &kp DE_FSLH        &kp DE_EQUAL &kp DE_N4 &kp DE_N5 &kp DE_N6 &kp DE_STAR &kp RET 
    &none      &kp DE_GT    &kp DE_RBKT &kp DE_RBRC &kp DE_RPAR &kp DE_BSLH        &kp DE_MINUS &kp DE_N1 &kp DE_N2 &kp DE_N3 &kp RSHIFT  &kp RSHIFT  
 
@@ -104,29 +114,20 @@
         raise_layer {
             display-name = "raise";
             bindings = <
-// &kp F1    &kp F2 &kp W    &kp E    &kp R      &kp T                           &kp Z      &kp U      &kp I  &kp F7      &kp F8   &kp BSPC
-// &kp ESC   &kp Q  &kp S    &kp D    &kp F      &kp G                           &kp H      &kp J      &kp K  &kp O       &kp P    &kp RET
-// &kp TAB   &kp A  &kp X    &kp C    &kp V      &kp B                           &kp N      &kp M      &kp L  &kp COMMA   &kp SEMI &kp SQT
-// &kp LSHFT &kp Y  &kp F3   &kp F4   &kp LCTRL  &kp LALT  &kp LGUI     &kp RGUI  &kp RALT  &kp RCTRL  &kp F5 &kp F6      &kp FSLH &kp RSHFT
    &kp F1     &kp F2                                                                                                        &kp F7   &kp F8  
-
    &kp TAB    &kp DE_AT   &none      &kp DE_EURO &kp DE_DLLR  &kp DE_AMPS         &kp DE_GRAVE &kp DE_AMPS &kp DE_TILDE &kp DE_PRCNT &kp DE_PRCNT  &none
-   &kp LSHIFT &none       &none      &none       &kp DE_EXCL  &none               &kp DE_HASH  &kp DE_DQT  &kp DE_EXCL  &none        &kp DE_BULLET &kp DE_GRAVE  
-   &none      &none       &none      &none       &kp DE_QMARK &none               &kp DE_STAR  &kp DE_SQT  &kp DE_QMARK &none        &kp DE_MIDDOT &kp RSHIFT  
+   &kp LSHIFT &none       &none      &none       &none        &none               &kp DE_HASH  &kp DE_DQT  &kp DE_EXCL  &none        &kp DE_BULLET &kp DE_GRAVE  
+   &none      &none       &none      &none       &none        &none               &kp DE_STAR  &kp DE_SQT  &kp DE_QMARK &none        &kp DE_MIDDOT &kp RSHIFT  
 
              &mo BT  &kp F4  &kp LGUI &kp RET &kp LALT                             &kp RALT  &kp SPACE &kp RGUI &kp F5    &mo BT   
             >;
         };
 
         adjust_layer {
+        // unused
             display-name = "adjust";
             bindings = <
-// &kp F1    &kp F2 &kp W    &kp E    &kp R      &kp T                           &kp Z      &kp U      &kp I  &kp F7      &kp F8   &kp BSPC
-// &kp ESC   &kp Q  &kp S    &kp D    &kp F      &kp G                           &kp H      &kp J      &kp K  &kp O       &kp P    &kp RET
-// &kp TAB   &kp A  &kp X    &kp C    &kp V      &kp B                           &kp N      &kp M      &kp L  &kp COMMA   &kp SEMI &kp SQT
-// &kp LSHFT &kp Y  &kp F3   &kp F4   &kp LCTRL  &kp LALT  &kp LGUI     &kp RGUI  &kp RALT  &kp RCTRL  &kp F5 &kp F6      &kp FSLH &kp RSHFT
    &kp F1     &kp F2                                                                                                        &kp F7   &kp F8  
-
    &kp TAB    &kp Q   &kp W   &kp E   &kp R    &kp T                                &kp Y     &kp U    &kp I     &kp O      &kp P    &kp BSPC  
    &none      &kp A   &kp S   &kp D   &kp F    &kp G                                &kp H     &kp J    &kp K     &kp L      &kp SEMI &none  
    &none      &kp Z   &kp X   &kp C   &kp V    &kp B                                &kp N     &kp M    &kp COMMA &kp PERIOD &kp FSLH &kp RSHIFT  
@@ -134,53 +135,51 @@
                       &mo BT  &kp F4  &kp LGUI &kp RET &kp LALT           &kp RALT  &kp SPACE &kp RGUI &kp F5    &mo BT   
             >;
         };
-		
+
         bt_layer {
             display-name = "bt";
             bindings = <
-// &bt BT_SEL 0  &bt BT_SEL 1 &none    &none         &sys_reset      &out OUT_TOG                 &none  &none  &none  &none  &sys_reset  &bootloader
-// &none         &none        &none    &ext_power EP_TOG    &none           &none                            &none  &none  &none  &none  &none  &none
-// &none         &none        &none    &bt BT_CLR_ALL       &none           &bootloader                      &none  &none  &none  &none  &none  &none
-// &none         &none        &none    &none                &none           &none         &none       &none  &none  &none  &none  &none  &none  &none
-   &bt BT_SEL 0     &bt BT_SEL 1                                                                                     &sys_reset   &bootloader  
-
-   &kp TAB    &kp Q   &kp W   &kp E          &sys_reset &out OUT_TOG             &kp Y     &kp U    &kp I     &kp O      &kp P    &kp BSPC  
-   &none      &kp A   &kp S   &kp D          &kp F      &kp G                    &kp H     &kp J    &kp K     &kp L      &kp SEMI &none  
-   &none      &kp Z   &kp X   &bt BT_CLR_ALL &kp V      &bootloader              &kp N     &kp M    &kp COMMA &kp PERIOD &kp FSLH &kp RSHIFT  
-
-                  &mo BT  &kp F4       &kp LGUI &kp RET &kp LALT                &kp RALT  &kp SPACE &kp RGUI       &kp F5    &mo BT   
+   &bt BT_SEL 0 &bt BT_SEL 1                                                                                     &sys_reset   &bootloader  
+   &bt BT_SEL 4 &none  &bt BT_SEL 2 &bt BT_SEL 3   &sys_reset &out OUT_TOG             &none   &none   &none   &none    &none   &none   
+   &none        &none  &none        &none          &none      &none                    &none   &none   &none   &tog NIX &none   &none   
+   &none        &none  &none        &bt BT_CLR_ALL &none      &bootloader              &none   &none   &none   &none    &none   &none   
+                  &mo BT  &none             &none    &none    &none              &none    &none    &none         &none    &mo BT   
             >;
         };
 
         navigation_layer {
             display-name = "nav";
             bindings = <
-// &kp F1    &kp F2 &kp W    &kp E    &kp R      &kp T                           &kp Z      &kp U      &kp I  &kp F7      &kp F8   &kp BSPC
-// &kp ESC   &kp Q  &kp S    &kp D    &kp F      &kp G                           &kp H      &kp J      &kp K  &kp O       &kp P    &kp RET
-// &kp TAB   &kp A  &kp X    &kp C    &kp V      &kp B                           &kp N      &kp M      &kp L  &kp COMMA   &kp SEMI &kp SQT
-// &kp LSHFT &kp Y  &kp F3   &kp F4   &kp LCTRL  &kp LGUI  &kp LGUI     &kp RGUI  &kp RALT  &kp RCTRL  &kp F5 &kp F6      &kp FSLH &kp RSHFT
    &none     &none                                                                                                        &none   &none  
-
-   &none     &none   &none   &none   &none    &none                                &none    &none    &none  &none     &none    &none  
-   &none     &none   &none   &kp DEL &none    &none                                &kp LEFT &kp DOWN &kp UP &kp RIGHT &none    &none
-   &none     &none   &none   &none   &none    &none                                &none    &none    &none  &none     &none    &none  
-
+   &none     &none   &none   &none   &none    &none                    &none    &none    &none  &none     &none    &none  
+   &none     &none   &none   &kp DEL &none    &none                    &kp LEFT &kp DOWN &kp UP &kp RIGHT &none    &none
+   &none     &none   &none   &none   &none    &none                    &none    &none    &none  &none     &none    &none  
                       &trans  &trans  &trans &trans &trans           &trans  &trans &trans &trans    &trans   
+            >;
+        };
+
+        lower_nix_layer {
+            display-name = "lower_nix";
+            bindings = <
+   &none      &none                                                                                                              &none   &none  
+   &kp TAB    &kp NIX_DE_CARET &none           &none           &none           &kp NIX_DE_PIPE    &kp NIX_DE_PLUS  &kp NIX_DE_N7 &kp NIX_DE_N8 &kp NIX_DE_N9 &kp BSPC        &kp DEL  
+   &kp LSHIFT &kp NIX_DE_LT    &kp NIX_DE_LBKT &kp NIX_DE_LBRC &kp NIX_DE_LPAR &kp NIX_DE_FSLH    &kp NIX_DE_EQUAL &kp NIX_DE_N4 &kp NIX_DE_N5 &kp NIX_DE_N6 &kp NIX_DE_STAR &kp RET 
+   &none      &kp NIX_DE_GT    &kp NIX_DE_RBKT &kp NIX_DE_RBRC &kp NIX_DE_RPAR &kp NIX_DE_BSLH    &kp NIX_DE_MINUS &kp NIX_DE_N1 &kp NIX_DE_N2 &kp NIX_DE_N3 &kp RSHIFT      &kp RSHIFT  
+                                 &mo BT  &trans  &kp LGUI &kp RET &kp LALT                          &kp RALT  &kp SPACE &kp NIX_DE_N0     &kp NIX_DE_COMMA    &kp NIX_DE_DOT   
+
+            >;
+        };
+
+        raise_nix_layer {
+            display-name = "raise_nix";
+            bindings = <
+   &kp F1     &kp F2                                                                                                        &kp F7   &kp F8  
+   &kp TAB    &kp NIX_DE_AT &none &kp NIX_DE_EURO &kp NIX_DE_DLLR  &kp NIX_DE_AMPS     &kp NIX_DE_GRAVE &kp NIX_DE_AMPS &kp NIX_DE_TILDE &kp NIX_DE_PRCNT &kp NIX_DE_PRCNT  &none
+   &kp LSHIFT &none         &none &none           &none            &none               &kp NIX_DE_HASH  &kp NIX_DE_DQT  &kp NIX_DE_EXCL  &none       &none &kp NIX_DE_GRAVE  
+   &none      &none         &none &none           &none            &none               &kp NIX_DE_STAR  &kp NIX_DE_SQT  &kp NIX_DE_QMARK     &none            &none &kp RSHIFT  
+                    &mo BT  &kp F4  &kp LGUI &kp RET &kp LALT                                      &kp RALT  &kp SPACE &kp RGUI &kp F5    &mo BT   
             >;
         };
 
     };
 };
-// &none    &none  &none    &none    &none      &none                   &none  &none  &none  &none  &none  &none
-// &none    &none  &none    &none    &none      &none                   &none  &none  &none  &none  &none  &none
-// &none    &none  &none    &none    &none      &none                   &none  &none  &none  &none  &none  &none
-// &none    &none  &none    &none    &none      &none  &none     &none  &none  &none  &none  &none  &none  &none
-//
-   //  &kp F1     &kp F2                                                                                                        &kp F7   &kp F8  
-
-   // &kp TAB    &kp Q   &kp W   &kp E   &kp R    &kp T                                &kp Y     &kp U    &kp I     &kp O      &kp P    &kp BSPC  
-   // &kp LSHIFT &kp A   &kp S   &kp D   &kp F    &kp G                                &kp H     &kp J    &kp K     &kp L      &kp SEMI &none  
-   // &none      &kp Z   &kp X   &kp C   &kp V    &kp B                                &kp N     &kp M    &kp COMMA &kp PERIOD &kp FSLH &kp RSHIFT  
-
-   //                    &mo BT  &kp F4  &kp LALT &kp RET &kp LGUI           &kp RGUI  &kp SPACE &kp RALT &kp F5    &mo BT   
-
